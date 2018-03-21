@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>test</title>
+
+    </head>
+    <body>
+
+
+     <form action="/search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="播放">
+    </form>
+
+	<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+ <script src="https://unpkg.com/video.js/dist/video.js"></script>
+ <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+  <div id = 'p1' style="display: none;">
+<video id="example-video" width="600" height="300" class="video-js vjs-default-skin" controls="controls" >
+  <source
+     src="{{ v_url }}"
+     type="application/x-mpegURL">
+</video>
+      </div>
+
+
+
+
+ <div id = 'p2' style="display: none;">
+
+             <video id = "video1" width="320", height="240", controls="controls">
+            //设置初始尺寸
+                            <source src="{{ v_url_mp4 }}", type="video/mp4"></source>
+                            <source src="{{ v_url_mp4 }}", type="video/ogg"></source>
+             </video>
+     </div>
+
+<script>
+     var player1 = videojs('example-video');
+    if('{{ v_url }}'.length<10){
+             alert('{{ v_url }}')
+        document.getElementById('p2').style.display = "block";
+    }else{
+        document.getElementById('p1').style.display = "block";
+        player1.play();
+
+    }
+</script>
+    </body>
+</html>
