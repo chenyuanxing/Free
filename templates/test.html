@@ -1,34 +1,33 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>test</title>
+        <title>一个小title</title>
 
     </head>
     <body>
-
-
-     <form action="/search/" method="get">
-        <input type="text" name="q">
-        <input type="submit" value="播放">
+    <h1>一个干净的网站</h1>
+     <form action="/search/" method="get" style="width: 60%;margin: auto;top: 0; left: 0; bottom: 0; right: 0;">
+        <input type="text" name="q" style="width: 100%;margin: auto;">
+        <input type="submit" value="播放" style="width: 100%;margin: auto">
     </form>
-
+    <br>
+    <br>
 	<link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
  <script src="https://unpkg.com/video.js/dist/video.js"></script>
  <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
-  <div id = 'p1' style="display: none;">
-<video id="example-video" width="600" height="300" class="video-js vjs-default-skin" controls="controls" >
-  <source
-     src="{{ v_url }}"
-     type="application/x-mpegURL">
-</video>
+
+  <div id = 'p1' style="display: none;width: 100%;height:100%">
+        <video id="example-video" width="600" height="300" class="video-js vjs-default-skin" controls="controls" style="width: 60%;height:60%;margin: auto;top: 0; left: 0; bottom: 0; right: 0;">
+          <source
+             src="{{ v_url }}"
+             type="application/x-mpegURL">
+        </video>
       </div>
 
 
+ <div id = 'p2' style="display: none;margin: auto;width: 70%;height:70%;top: 0; left: 0; bottom: 0; right: 0;">
 
-
- <div id = 'p2' style="display: none;">
-
-             <video id = "video1" width="320", height="240", controls="controls">
+             <video id = "video1" width="320", height="240", controls="controls" style="width: 100%;height:100%;margin: auto;top: 0; left: 0; bottom: 0; right: 0;">
             //设置初始尺寸
                             <source src="{{ v_url_mp4 }}", type="video/mp4"></source>
                             <source src="{{ v_url_mp4 }}", type="video/ogg"></source>
@@ -38,7 +37,6 @@
 <script>
      var player1 = videojs('example-video');
     if('{{ v_url }}'.length<10){
-             alert('{{ v_url }}')
         document.getElementById('p2').style.display = "block";
     }else{
         document.getElementById('p1').style.display = "block";
