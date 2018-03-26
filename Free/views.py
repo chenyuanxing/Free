@@ -9,7 +9,6 @@ def hello(request):                          #request参数必须有，名字类
 def viewMovie(request):
     # return HttpResponse("Hello world ! ")
     context = {}
-    context['hello'] = 'Hello World!'  # 数据绑定
     context['v_url'] = 'https://tbm.alicdn.com/6vAsJsegVeBeb6vz3Vi/QoblkUutvdRvp882djB@@hd.m3u8'  # 默认初始影片地址
     return render(request, 'test.html',context)  #  将绑定的数据传入前台
     # return render_to_response('demo2.htm')
